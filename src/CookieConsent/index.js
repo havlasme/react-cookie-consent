@@ -75,18 +75,18 @@ const CookieConsent = function ({ children, expiration = 31536000, open = false,
                 }
 
                 <div className="cc-foot">
-                    <button className="cc-accept btn btn-primary btn-symbol" type="button" onClick={onSubmit} data-cc-accept="accept">
+                    <button className="cc-accept" type="button" onClick={onSubmit} data-cc-accept="accept">
                         Povoliť všetky
                     </button>
 
                     {expand &&
-                        <button className="cc-reject btn btn-outline-primary btn-symbol" type="button" onClick={onSubmit}>
+                        <button className="cc-reject" type="button" onClick={onSubmit}>
                             {Object.values(omit(['_timestamp', '_version'], state)).reduce(or, false) ? 'Povoliť vybrané' : 'Odmietnuť všetky'}
                         </button>
                     }
 
                     {!expand &&
-                        <button className="cc-expand btn btn-outline-primary btn-symbol" type="button" onClick={setExpand}>
+                        <button className="cc-expand" type="button" onClick={setExpand}>
                             Prispôsobiť
                         </button>
                     }

@@ -7,7 +7,6 @@ import CookieConsentCookie from '../CookieConsentCookie'
 import CookieConsentHead from '../CookieConsentHead'
 import CookieConsentPortal from '../CookieConsentPortal'
 import propTypes from './index.type'
-import './style.scss'
 import useBoolState from '../useBoolState'
 import useCookieConsent, { isExpired } from '../useCookieConsent'
 

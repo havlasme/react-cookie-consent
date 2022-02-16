@@ -1,0 +1,60 @@
+{
+  "name": "@havlasme/react-cookie-consent",
+  "version": "1.0.0",
+  "description": "react cookie consent",
+  "keywords": [
+    "react",
+    "cookie",
+    "cookie consent"
+  ],
+  "author": "Tomáš Havlas <tomas@havlas.me>",
+  "license": "Apache-2.0",
+  "homepage": "https://gitlab.com/havlas.me/react-cookie-consent",
+  "repository": "https://gitlab.com/havlas.me/react-cookie-consent",
+  "main": "./dist/index.js",
+  "browserslist": "> 0.25%, not dead",
+  "scripts": {
+    "build": "npm run build:js && npm run build:css",
+    "build:css": "sass src/style.scss dist/react-cookie-consent.min.css --style=compressed",
+    "build:js": "babel src --out-dir dist",
+    "prepack": "npm run build",
+    "lint": "eslint src",
+    "release": "semantic-release",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@havlasme/react-toolkit": "^3.2.0",
+    "classcat": "^5.0.0",
+    "date-fns": "^2.28.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.0",
+    "@babel/core": "^7.14.0",
+    "@babel/preset-env": "^7.14.0",
+    "@babel/preset-react": "^7.14.0",
+    "@semantic-release/git": "^9.0.0",
+    "@semantic-release/gitlab": "^6.2.0",
+    "@semantic-release/npm": "^7.1.0",
+    "browserlist": "^1.0.0",
+    "core-js": "^3.15.0",
+    "eslint": "^7.29.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prop-types": "^15.7.0",
+    "ramda": "^0.27.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "rxjs": "^6.0.0",
+    "sass": "^1.49.7",
+    "semantic-release": "^17.4.0"
+  },
+  "peerDependencies": {
+    "ramda": "^0.27.0",
+    "react": "^16.0.0 || ^17.0.0",
+    "react-dom": "^16.0.0 || ^17.0.0",
+    "rxjs": "^6.0.0 || ^7.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

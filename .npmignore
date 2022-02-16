@@ -1,0 +1,12 @@
+# npm cache
+.npm
+
+# intellij idea
+.idea
+
+# source code
+.eslintrc
+.gitlab-ci.yml
+babel.config.js
+release.config.js
+/src

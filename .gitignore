@@ -1,0 +1,6 @@
+# intellij idea
+.idea
+
+# node.js
+/dist
+/node_modules

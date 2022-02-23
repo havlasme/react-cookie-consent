@@ -5,9 +5,9 @@ import React, { useCallback, useEffect } from 'react'
 import CookieConsentCategory from '../CookieConsentCategory'
 import CookieConsentCookie from '../CookieConsentCookie'
 import CookieConsentPortal from '../CookieConsentPortal'
-import propTypes from './index.type'
 import useBoolState from '../useBoolState'
 import useCookieConsent, { isExpired } from '../useCookieConsent'
+import propTypes from './index.type'
 
 const mapCookieCategory = function (children, state, implicit = false) {
     return React.Children.toArray(children).reduce(function (map, child) {
@@ -76,18 +76,18 @@ const CookieConsent = function ({ children, className, expiration = 31536000, op
                 }
 
                 <div className="cc-foot">
-                    <button className="cc-accept" type="button" onClick={onSubmitProxy} data-cc-accept="accept">
+                    <button className="cc-button cc-accept" type="button" onClick={onSubmitProxy} data-cc-accept="accept">
                         Povoliť všetky
                     </button>
 
                     {expand &&
-                        <button className="cc-reject" type="button" onClick={onSubmitProxy}>
+                        <button className="cc-button cc-reject" type="button" onClick={onSubmitProxy}>
                             {Object.values(omit(['_timestamp', '_version'], state)).reduce(or, false) ? 'Povoliť vybrané' : 'Odmietnuť všetky'}
                         </button>
                     }
 
                     {!expand &&
-                        <button className="cc-expand" type="button" onClick={setExpand}>
+                        <button className="cc-button cc-expand" type="button" onClick={setExpand}>
                             Prispôsobiť
                         </button>
                     }

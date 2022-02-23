@@ -21,10 +21,10 @@ const CookieConsentCategory = function ({ checked = false, children, className, 
                     {title}
                 </button>
 
-                <label className="cc-switch">
+                <label className="cc-checkbox">
                     <input checked={checked} disabled={disabled} name={name} type="checkbox" onChange={onChange}/>
 
-                    <span className="cc-switch-control"/>
+                    <span className="cc-checkbox-control"/>
                 </label>
             </div>
 

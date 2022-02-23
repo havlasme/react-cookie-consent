@@ -24,7 +24,7 @@ const mapCookieCategory = function (children, state, implicit = false) {
  * @return {null|JSX.Element}
  * @constructor
  */
-const CookieConsent = function ({ children, expiration = 31536000, open = false, persist = 'cc:consent', version, onSubmit }) {
+const CookieConsent = function ({ children, className, expiration = 31536000, open = false, persist = 'cc:consent', version, onSubmit }) {
     // cookie category persistent state
     const [state, setState, persistState] = useCookieConsent({ _version: version }, { key: persist, version })
     // is the cookie consent expanded?
@@ -50,7 +50,7 @@ const CookieConsent = function ({ children, expiration = 31536000, open = false,
     }, [state._timestamp])
 
     return (!isExpired(state, expiration, version) && !expand) ? null : (
-        <div className={cc(['cc', { expand }])}>
+        <div className={cc(['cc', className, { expand }])}>
             <div className="cc-content">
                 <div className="cc-head">
                     {React.Children.map(children, function (child) {

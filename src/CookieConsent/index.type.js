@@ -6,6 +6,10 @@ export default {
      */
     children: PropType.node,
     /**
+     * the class name
+     */
+    className: PropType.string,
+    /**
      * the cookie consent expiration (in seconds)
      * default: 31536000 (1 year)
      */

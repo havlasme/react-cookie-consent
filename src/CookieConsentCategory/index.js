@@ -1,4 +1,4 @@
-import { useBoolState, withComponentProxy } from '@havlasme/react-toolkit'
+import { useBoolState } from '@havlasme/react-toolkit'
 import cc from 'classcat'
 import React from 'react'
 import CookieConsentCookie from '../CookieConsentCookie'
@@ -51,4 +51,4 @@ const CookieConsentCategory = function ({ checked = false, children, disabled = 
 
 CookieConsentCategory.propTypes = propTypes
 
-export default withComponentProxy(CookieConsentCategory)
+export default CookieConsentCategory

@@ -5,7 +5,7 @@ export default {
      * is the cookie category checked?
      * default: false
      */
-    checked: PropType.bool.isRequired,
+    checked: PropType.bool,
     /**
      * the children
      */

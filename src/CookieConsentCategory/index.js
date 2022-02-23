@@ -1,6 +1,7 @@
 import { useBoolState, withComponentProxy } from '@havlasme/react-toolkit'
 import cc from 'classcat'
 import React from 'react'
+import CookieConsentCookie from '../CookieConsentCookie'
 import propTypes from './index.type'
 
 /**
@@ -27,11 +28,23 @@ const CookieConsentCategory = function ({ checked = false, children, disabled = 
                 </label>
             </div>
 
-            {expand &&
-                <div className="cc-category-body">
-                    {children}
-                </div>
-            }
+            <div className="cc-category-body">
+                {React.Children.map(children, function (child) {
+                    if (React.isValidElement(child) && child.type !== CookieConsentCookie) {
+                        return child
+                    }
+                    return null
+                })}
+
+                {expand &&
+                    React.Children.map(children, function (child) {
+                        if (React.isValidElement(child) && child.type === CookieConsentCookie) {
+                            return child
+                        }
+                        return null
+                    })
+                }
+            </div>
         </div>
     )
 }

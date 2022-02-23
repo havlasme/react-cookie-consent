@@ -11,6 +11,10 @@ export default {
      */
     children: PropType.node,
     /**
+     * the class name
+     */
+    className: PropType.string,
+    /**
      * is the cookie category disabled?
      * default: false
      */

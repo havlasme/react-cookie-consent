@@ -4,7 +4,6 @@ import { defaultTo, isNil, mergeLeft, omit, or } from 'ramda'
 import React, { useCallback, useEffect } from 'react'
 import CookieConsentCategory from '../CookieConsentCategory'
 import CookieConsentCookie from '../CookieConsentCookie'
-import CookieConsentHead from '../CookieConsentHead'
 import CookieConsentPortal from '../CookieConsentPortal'
 import propTypes from './index.type'
 import useBoolState from '../useBoolState'
@@ -53,12 +52,14 @@ const CookieConsent = function ({ children, expiration = 31536000, open = false,
     return (!isExpired(state, expiration, version) && !expand) ? null : (
         <div className={cc(['cc', { expand }])}>
             <div className="cc-content">
-                {React.Children.map(children, function (child) {
-                    if (React.isValidElement(child) && child.type === CookieConsentHead) {
-                        return child
-                    }
-                    return null
-                })}
+                <div className="cc-head">
+                    {React.Children.map(children, function (child) {
+                        if (React.isValidElement(child) && child.type !== CookieConsentCategory) {
+                            return child
+                        }
+                        return null
+                    })}
+                </div>
 
                 {expand &&
                     <div className="cc-body">
@@ -100,7 +101,6 @@ CookieConsent.propTypes = propTypes
 
 CookieConsent.Category = CookieConsentCategory
 CookieConsent.Cookie = CookieConsentCookie
-CookieConsent.Head = CookieConsentHead
 CookieConsent.Portal = CookieConsentPortal
 
 export default CookieConsent

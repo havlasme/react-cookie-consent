@@ -12,7 +12,7 @@ import useCookieConsent, { isExpired } from '../useCookieConsent'
 const mapCookieCategory = function (children, state, implicit = false) {
     return React.Children.toArray(children).reduce(function (map, child) {
         if (React.isValidElement(child) && child.type === CookieConsentCategory && child.props.disabled !== true) {
-            return { ...map, [child.props.name]: defaultTo(child.props.checked, implicit || state[child.props.name]) }
+            return { ...map, [child.props.name]: defaultTo(child.props.checked, state[child.props.name]) || implicit }
         }
         return map
     }, {})

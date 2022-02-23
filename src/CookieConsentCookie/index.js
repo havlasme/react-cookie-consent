@@ -1,6 +1,7 @@
 import { isNil } from 'ramda'
 import React from 'react'
 import propTypes from './index.type'
+import cc from 'classcat'
 
 /**
  * The CookieConsent.Cookie component.
@@ -8,9 +9,9 @@ import propTypes from './index.type'
  * @return {JSX.Element}
  * @constructor
  */
-const CookieConsentCookie = function ({ children, expiration, name, type }) {
+const CookieConsentCookie = function ({ children, className, expiration, name, type }) {
     return (
-        <div className="cc-cookie">
+        <div className={cc(['cc-cookie', className])}>
             <h6 className="cc-cookie-head">
                 {name}
             </h6>

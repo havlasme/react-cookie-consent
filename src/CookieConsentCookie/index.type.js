@@ -6,6 +6,10 @@ export default {
      */
     children: PropType.node,
     /**
+     * the class name
+     */
+    className: PropType.string,
+    /**
      * the cookie expiration
      */
     expiration: PropType.string.isRequired,

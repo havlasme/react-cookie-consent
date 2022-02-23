@@ -21,11 +21,11 @@ export default {
     open: PropType.bool,
     /**
      * the cookie consent persistence key
-     * default: cc:consent
+     * default: "cc:consent"
      */
     persist: PropType.string,
     /**
-     * the cookie notice version
+     * the cookie consent version
      */
     version: PropType.number,
     /**

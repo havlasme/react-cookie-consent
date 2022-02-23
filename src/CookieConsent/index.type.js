@@ -25,7 +25,7 @@ export default {
      */
     version: PropType.number,
     /**
-     * the accept event callback
+     * the submit event callback
      */
-    onAccept: PropType.func,
+    onSubmit: PropType.func,
 }

@@ -24,13 +24,13 @@ const mapCookieCategory = function (children, state, implicit = false) {
  * @return {null|JSX.Element}
  * @constructor
  */
-const CookieConsent = function ({ children, expiration = 31536000, open = false, persist = 'cc:consent', version, onAccept }) {
+const CookieConsent = function ({ children, expiration = 31536000, open = false, persist = 'cc:consent', version, onSubmit }) {
     // cookie category persistent state
     const [state, setState, persistState] = useCookieConsent({ _version: version }, { key: persist, version })
     // is the cookie consent expanded?
     const [expand, setExpand] = useBoolState(false, open)
 
-    const onSubmit = useCallback(function (event) {
+    const onSubmitProxy = useCallback(function (event) {
         persistState(mapCookieCategory(children, state, event.target.dataset.ccAccept === 'accept'))
         setExpand(false)
     }, [children, state, setExpand, persistState])
@@ -45,7 +45,7 @@ const CookieConsent = function ({ children, expiration = 31536000, open = false,
 
     useEffect(function () {
         if (!isExpired(state, expiration, version)) {
-            runEventCallback(onAccept, omit(['_timestamp', '_version'], state))
+            runEventCallback(onSubmit, omit(['_timestamp', '_version'], state))
         }
     }, [state._timestamp])
 
@@ -76,12 +76,12 @@ const CookieConsent = function ({ children, expiration = 31536000, open = false,
                 }
 
                 <div className="cc-foot">
-                    <button className="cc-accept" type="button" onClick={onSubmit} data-cc-accept="accept">
+                    <button className="cc-accept" type="button" onClick={onSubmitProxy} data-cc-accept="accept">
                         Povoliť všetky
                     </button>
 
                     {expand &&
-                        <button className="cc-reject" type="button" onClick={onSubmit}>
+                        <button className="cc-reject" type="button" onClick={onSubmitProxy}>
                             {Object.values(omit(['_timestamp', '_version'], state)).reduce(or, false) ? 'Povoliť vybrané' : 'Odmietnuť všetky'}
                         </button>
                     }

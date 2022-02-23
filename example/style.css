@@ -1,0 +1,65 @@
+body {
+    color: rgb(34, 34, 34);
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+button:not(.cc-category-title) {
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 400px;
+    color: rgb(34, 34, 34);
+    cursor: pointer;
+    font-weight: 700;
+    padding: 0.75rem 1.5rem;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    margin-top: 0;
+}
+
+h2, h3, h4, h5, h6 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0;
+}
+
+.react-cookie-consent-example {
+    align-items: center;
+    background: #4A00E0;
+    background: linear-gradient(45deg, #4A00E0, #8E2DE2);
+    color: #EEEEEE;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+}
+
+.react-cookie-consent-example-value {
+    margin-bottom: 2rem;
+}
+
+.cc {
+    box-shadow: rgba(0, 0, 0, 0.15) 0 0.5rem 1rem 0;
+    color: rgb(34, 34, 34);
+    line-height: 1.5;
+}
+
+button.cc-accept {
+    background: rgb(13, 110, 253);
+    border: 1px solid rgb(13, 110, 253);
+    color: #FFFFFF;
+}
+
+.cc-privacy-policy {
+    margin: 0.5rem 0;
+}
+
+.cc-cookie,
+.cc-cookie-head {
+    font-size: 0.8rem;
+}
